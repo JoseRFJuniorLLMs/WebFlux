@@ -1,41 +1,17 @@
 package com.linkedin.webflux.document;
 
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "PRODUTOS")
+@Data
+@Builder
+@Document(collection = "produto")
 public class Produtos {
 
-	public Produtos(String id, String nome, Double preco) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.preco = preco;
-	}
-
 	@Id
-	private String id;
-	private String nome;
-	private Double preco;
+	 String id;
+	 String nome;
+	 String preco;
 	
-	
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public Double getPreco() {
-		return preco;
-	}
-	public void setPreco(Double preco) {
-		this.preco = preco;
-	}
-
 }

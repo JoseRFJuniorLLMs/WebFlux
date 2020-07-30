@@ -1,0 +1,12 @@
+version: '3.0'
+services:
+  webflux-mongodb:
+    container_name: produto-mongodb
+    image: library/mongo:4.0
+    restart: always
+    environment:
+      - MONGO_DATA_DIR=/data/dbproduto
+      - MONGO_LOG_DIR=/dev/null
+    ports:
+      - 27017:27017
+    command: mongod --smallfiles --logpath=/dev/null # --quiet
