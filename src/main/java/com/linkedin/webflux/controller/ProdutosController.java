@@ -78,15 +78,16 @@ public class ProdutosController {
 	}
 
 	@DeleteMapping("/produto/delete/todos")
-	public Mono<Void> deleteAllPokemons() {
+	public Mono<Void> deleteAllProdutos() {
 		return produtosService.deleteAll();
 	}
 
-	@GetMapping(value = "/tipos", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+	@GetMapping(value = "/tipos/stream", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
 	public Flux<Tipo> getTipoFlux() {
 		return Flux.interval(Duration.ofSeconds(1))
 				.map(val ->
-						new Tipo(val, "Stream de Produtos")
+						new Tipo(val, "Stream de Tipos")
 				);
 	}
+
 }

@@ -14,4 +14,9 @@ public class Produtos {
 	 String nome;
 	 String preco;
 
+	public Produtos(String id, String nome, String preco) {
+		this.id = id;
+		this.nome = nome;
+		this.preco = preco;
+	}
 }
