@@ -6,12 +6,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @Builder
-@Document(collection = "produto")
-public class Produtos {
+@Document(collection = "tipo")
+public class Tipo {
 
-	 @Id
-	 String id;
-	 String nome;
-	 String preco;
+    @Id
+    long id;
+    String nome;
 
+    public Tipo(long id, String nome) {
+        this.id = id;
+        this.nome = nome;
+    }
 }

@@ -30,4 +30,14 @@ public class ProdutosServiceImpl implements ProdutosService {
 		return produtosRespository.save(produtos);
 	}
 
+	@Override
+	public Mono<Void> delete(Produtos produtos) {
+		return produtosRespository.delete(produtos);
+	}
+
+	@Override
+	public Mono<Void> deleteAll() {
+		return produtosRespository.deleteAll();
+	}
+
 }

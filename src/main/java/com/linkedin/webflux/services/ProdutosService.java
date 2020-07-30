@@ -10,5 +10,6 @@ public interface ProdutosService {
 	Flux<Produtos> findAll();
 	Mono<Produtos> findById(String id);
 	Mono<Produtos> save(Produtos produtos);
-
+	Mono<Void> delete(Produtos produtos);
+	Mono<Void> deleteAll();
 }
